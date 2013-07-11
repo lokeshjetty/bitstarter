@@ -90,9 +90,7 @@ if(require.main == module) {
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
 	.option('-u, --url <url>', 'Path to url', clone(assertURLExists), URL_DEFAULT)
         .parse(process.argv);
-    console.log(program.url);
-    
-    /*var checkJson = checkHtmlFile(program.file, program.checks);*/
+
     var checkJson;
     var outJson;
     if(program.url) {
@@ -108,12 +106,3 @@ if(require.main == module) {
     exports.checkHtmlFile = checkHtmlFile;
 }
 
-/*var response2console = function(result, response) {
-        if (result instanceof Error) {
-            console.error('Error: ' + util.format(response.message));
-        } else {
-            console.log(result);
-        }
-    };
-
-*/
